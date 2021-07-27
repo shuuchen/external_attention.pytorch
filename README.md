@@ -1,12 +1,14 @@
 # external_attention.pytorch
 An unofficial PyTorch implementation of external attention. Official implementation can be found [here](https://github.com/MenghaoGuo/EANet).
 
-<img src="" width="480" height="220" />
+<img src="https://github.com/shuuchen/external_attention.pytorch/blob/main/images/ea.png" width="720" height="220" />
 
 
 ## Requirements
 ```
-pip install -r requirements.txt
+einops==0.3.0
+torch==1.7.0+cu101
+torchvision==0.8.1+cu101
 ```
 
 ## Differences from official version
