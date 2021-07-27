@@ -16,13 +16,20 @@ In official implementation, the number of input channels is preserved throughout
 
 
 ## Usage
-* Simply replace nn.ReLU with FReLU(num_channels), details can be found [here](https://github.com/shuuchen/frelu.pytorch/blob/master/resnet.py).
-```python
-from frelu import FReLU
-
-conv = nn.Conv2d(in_channels, out_channels, 3, padding=1)
-bn = nn.BatchNorm2d(out_channels)
-frelu = FReLU(out_channels) # ⬅️
+* Simply specify the numbers of input and output channels, the numbers of memory units, attention heads etc. could be specified optionally. Details can be found [here](https://github.com/shuuchen/external_attention.pytorch/blob/main/external_attention.py#L47).
+```shell
+$ python
+Python 3.8.3 (default, Dec  9 2020, 14:17:23)
+[GCC 7.5.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> from externel_attntion import ExternelAttention
+>>>
+>>> x = torch.rand(2,2,51,1)
+>>> ea = ExternelAttention(2, 78)
+>>> eax = ea(x)
+>>> eax.size()
+torch.Size([2, 78, 51, 1])
 ```
 
 
