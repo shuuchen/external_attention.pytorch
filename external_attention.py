@@ -41,7 +41,7 @@ class ExternelAttention(nn.Module):
         x = rearrange(x, 'b (h w) c -> b c h w', h=height)
         y = rearrange(y, 'b (h w) c -> b c h w', h=height)
 
-        return x + y
+        return (x + y).contiguous()
 
 
 if __name__ == '__main__':
@@ -49,3 +49,4 @@ if __name__ == '__main__':
     ea = ExternelAttention(2, 78)
     eax = ea(x)
     print(eax.size())
+    print(eax.view(2, -1).size())
